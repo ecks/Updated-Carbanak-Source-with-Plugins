@@ -24,7 +24,7 @@ namespace Server
         {
 			Environment.CurrentDirectory = Application.StartupPath;
 			Console.WriteLine("Working path " + Environment.CurrentDirectory);
-			LoadSQLLiteAssembly();
+//			LoadSQLLiteAssembly();
             cfg = new Config();
             cfg.Load();
 			try

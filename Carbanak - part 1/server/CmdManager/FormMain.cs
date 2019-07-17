@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
+//using Player;
+
 namespace CmdManager
 {
     //боты в вкладке

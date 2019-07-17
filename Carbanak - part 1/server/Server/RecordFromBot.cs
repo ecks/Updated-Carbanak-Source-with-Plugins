@@ -1443,9 +1443,9 @@ namespace Server
             try
             {
                 Socket _sc2 = scListen.Accept();
-                if (sc2 == null)
-                    sc2 = new Sender(_sc2);
-                else
+//                if (sc2 == null)
+//                    sc2 = new Sender(_sc2);
+//                else
                     sc2.Socket = _sc2;
                 if (sc2.Connected)
                 {
