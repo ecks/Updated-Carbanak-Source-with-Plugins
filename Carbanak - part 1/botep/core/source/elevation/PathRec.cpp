@@ -166,7 +166,7 @@ DWORD CheckMagicDword()
 	DWORD dwMagic = 0;
 
     OSVer.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
-    if( API(KERNEL32, GetVersionExA)( (OSVERSIONINFO*)&OSVer ) )
+    if( API(KERNEL32, GetVersionExA)( (LPOSVERSIONINFOA)(OSVERSIONINFO*)&OSVer ) )
 	{
 		switch( OSVer.dwMajorVersion )
 		{

@@ -1,7 +1,7 @@
-#include "core\service.h"
-#include "core\debug.h"
-#include "core\reestr.h"
-#include "core\rand.h"
+#include "..\include\core\service.h"
+#include "..\include\core\debug.h"
+#include "..\include\core\reestr.h"
+#include "..\include\core\rand.h"
 
 namespace Service
 {
@@ -161,9 +161,9 @@ bool CreateNameService( StringBuilder& name, StringBuilder& displayName )
 	if( s )
 	{
 		int n = Rand::Gen( count - 1 );
-		name = s[n].lpServiceName;
+		name = StringBuilder((char *)s[n].lpServiceName, strlen((const char *)s[n].lpServiceName));
 		name.Insert( 0, _CS_("Intel") );
-		displayName = s[n].lpDisplayName;
+		displayName = StringBuilder((char *)s[n].lpDisplayName, strlen((const char *)s[n].lpServiceName));
 		displayName.Substring(1);
 		displayName[0] = Str::Upper( displayName[0] );
 		Mem::Free(s);
@@ -185,14 +185,14 @@ bool GetNameService( StringBuilder& name, const StringBuilder& pathExe )
 		for( int i = 0; i < count; i++ )
 		{
 			keyName = keyServices;
-			keyName += s[i].lpServiceName;
+			keyName += StringBuilder((char *)s[i].lpServiceName, strlen((const char *)s[i].lpServiceName));
 			Reestr reg( HKEY_LOCAL_MACHINE, keyName, KEY_READ );
 			if( reg.GetString( imagePath, path ) )
 			{
 				path.Lower();
 				if( path == pathExe )
 				{
-					name = s[i].lpServiceName;
+					name = StringBuilder((char *)s[i].lpServiceName, strlen((const char *)s[i].lpServiceName));
 					ret = true;
 					break;
 				}

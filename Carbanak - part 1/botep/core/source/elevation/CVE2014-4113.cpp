@@ -293,7 +293,7 @@ static HMENU InitPopupMenu()
 	szMenuText[1] = 0;
 
 	Item2.fMask = MIIM_STRING | MIIM_SUBMENU;
-	Item2.dwTypeData = szMenuText;
+	Item2.dwTypeData = (LPWSTR) szMenuText;
 	Item2.cch = 1;             // length of szMenuText
 	Item2.hSubMenu = hMenu1;
 	Item2.cbSize = sizeof(Item2);

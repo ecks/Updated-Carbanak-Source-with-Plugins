@@ -133,7 +133,7 @@ HMODULE InitAndRun( void* imageBase, const void* data, int szData, void* thirdPa
 							(SIZE_T)imageBase, locationDelta, headers->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_BASERELOC].Size );
 
 	HMODULE ret = 0;
-	if( WinAPI::BuildImportTable( (HMODULE)imageBase, API(KERNEL32, LoadLibraryA), (typeGetProcAddress)API(KERNEL32, GetProcAddress) ) )
+	if( WinAPI::BuildImportTable( (HMODULE)imageBase, (typeLoadLibraryA)API(KERNEL32, LoadLibraryA), (typeGetProcAddress)API(KERNEL32, GetProcAddress) ) )
 	{
 		FinalizeSections( imageBase, 0 );
 		if( headers->OptionalHeader.AddressOfEntryPoint != 0 )

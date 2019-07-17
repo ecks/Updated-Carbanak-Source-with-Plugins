@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core\core.h"
+#include "../include/core/core.h"
 
 //генератор случайных чисел реализован методом Фибоначчи с запаздыванием, его параметры (17,5)
 namespace Rand

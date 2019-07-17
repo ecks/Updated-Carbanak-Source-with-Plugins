@@ -1,8 +1,8 @@
-#include "core\process.h"
-#include "core\debug.h"
-#include "core\file.h"
-#include "core\util.h"
-#include "core\hook.h"
+#include "..\..\include\core\process.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\file.h"
+#include "..\..\include\core\util.h"
+#include "..\..\include\core\hook.h"
 #include <Wtsapi32.h>
 //такое нужно чтобы взялась функция GetModuleFileNameExA совместимая с XP
 #define PSAPI_VERSION 1
@@ -114,8 +114,8 @@ int ListProcess( typeListProcessCallback func, void* tag, DWORD typeSnap )
 	int ret = 0;
 	do
 	{
-		Str::Lower(pe.szExeFile);
-		pi->fileName = pe.szExeFile;
+//		Str::Lower(pe.szExeFile);
+		pi->fileName = StringBuilderStack<64>((const char *)pe.szExeFile, strlen((const char *)pe.szExeFile));
 		Name( pe.th32ProcessID,  pi->fullPath, true );
 		pi->fullPath.Lower();
 		pi->hash = pi->fileName.Hash();

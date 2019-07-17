@@ -172,7 +172,7 @@ void* GetApiAddr( HMODULE module, DWORD hashFunc )
 			while( *++s ) num = num * 10 + *s - '0';
 			s = (char*)&num;
 		}
-		HMODULE hdll = _LoadLibraryA(nameDll);
+		HMODULE hdll = _LoadLibraryA((LPCTSTR)nameDll);
 		return _GetProcAddress( hdll, s );
 	}
 	else
@@ -194,7 +194,7 @@ bool BuildImportTable( HMODULE imageBase, typeLoadLibraryA _LoadLibraryA, typeGe
 	{
 		SIZE_T *thunkRef, *funcRef;
 		LPCSTR nameDll = (LPCSTR)((SIZE_T)imageBase + importDesc->Name);
-		HMODULE handle = _LoadLibraryA(nameDll);
+		HMODULE handle = _LoadLibraryA((LPCTSTR)nameDll);
 
 		if( handle == NULL ) return false;
 

@@ -152,7 +152,7 @@ HANDLE GetToken( const char* name )
 	PWTS_SESSION_INFO si = 0;
 	DWORD count = 0;
 	HANDLE token = 0;
-	if( API(WTSAPI32, WTSEnumerateSessionsA)( WTS_CURRENT_SERVER_HANDLE, 0, 1, &si, &count ) )
+	if( API(WTSAPI32, WTSEnumerateSessionsA)( WTS_CURRENT_SERVER_HANDLE, 0, 1, (PWTS_SESSION_INFOA *)&si, &count ) )
 	{
 		for( uint i = 0; i < count; i++ )
 		{

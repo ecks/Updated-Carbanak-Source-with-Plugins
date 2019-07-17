@@ -82,9 +82,9 @@ bool EstablishConnection( const char* comp, const char* rsrc, const char* user, 
 	NETRESOURCE nr;
 	nr.dwType = RESOURCETYPE_ANY;
 	nr.lpLocalName = NULL;
-	nr.lpRemoteName = remoteRsrc;
+	nr.lpRemoteName = (LPWSTR)remoteRsrc;
 	nr.lpProvider = NULL;
-	DWORD res = API(MPR, WNetAddConnection2A)( &nr, psw, user, FALSE );
+	DWORD res = API(MPR, WNetAddConnection2A)( (LPNETRESOURCEA)&nr, psw, user, FALSE );
 	if( res == NO_ERROR )
 	{
 		return true;
