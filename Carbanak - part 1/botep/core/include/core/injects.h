@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core\core.h"
+#include "..\..\include\core\core.h"
 
 typedef SIZE_T (*typeInjectCode )( HANDLE hprocess, typeFuncThread startFunc, HMODULE* newBaseImage );
 typedef bool (*typeRunInjectCode)( HANDLE hprocess, HANDLE hthread, typeFuncThread startFunc, typeInjectCode func );

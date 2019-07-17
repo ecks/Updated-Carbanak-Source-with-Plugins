@@ -1,5 +1,5 @@
-#include "core\process.h"
-#include "core\debug.h"
+#include "..\..\include\core\process.h"
+#include "..\..\include\core\debug.h"
 #define PSAPI_VERSION 1
 #include "psapi.h"
 

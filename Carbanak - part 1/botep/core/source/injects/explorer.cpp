@@ -1,4 +1,4 @@
-#include "core\injects.h"
+#include "..\..\include\core\injects.h"
 
 static bool RunExplorer( HANDLE* hprocess, HANDLE* hthread )
 {

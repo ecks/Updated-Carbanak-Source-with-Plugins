@@ -1,10 +1,10 @@
-#include "core\injects.h"
-#include "core\pe.h"
+#include "..\..\include\core\injects.h"
+#include "..\..\include\core\pe.h"
 #define PSAPI_VERSION 1
 #include "psapi.h"
 #include "..\hook\x86\zdisasm.h"
-#include "core\debug.h"
-#include "core\util.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\util.h"
 
 #ifndef _WIN64
 

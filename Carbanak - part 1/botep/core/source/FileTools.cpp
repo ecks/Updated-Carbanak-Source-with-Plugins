@@ -1,5 +1,5 @@
-#include "core\FileTools.h"
-#include "core\debug.h"
+#include "..\include\core\FileTools.h"
+#include "..\include\core\debug.h"
 #include "Imagehlp.h"
 
 namespace File

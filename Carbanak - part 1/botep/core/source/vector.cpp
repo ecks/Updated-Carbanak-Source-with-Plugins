@@ -1,5 +1,5 @@
-#include "core\memory.h"
-#include "core\vector.h"
+#include "..\include\core\memory.h"
+#include "..\include\core\vector.h"
 
 VectorBase::VectorBase( int _size, int _szValue )
 {

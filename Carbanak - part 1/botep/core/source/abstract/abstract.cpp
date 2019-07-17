@@ -1,4 +1,4 @@
-#include "core\abstract.h"
+#include "..\..\include\core\abstract.h"
 
 namespace Abstract
 {

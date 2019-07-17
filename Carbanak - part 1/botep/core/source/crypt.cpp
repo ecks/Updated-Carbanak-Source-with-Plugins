@@ -1,8 +1,8 @@
-#include "core\crypt.h"
+#include "..\include\core\crypt.h"
 #include <wincrypt.h>
-#include "core\file.h"
-#include "core\debug.h"
-#include "core\abstract.h"
+#include "..\include\core\file.h"
+#include "..\include\core\debug.h"
+#include "..\include\core\abstract.h"
 
 namespace Crypt
 {

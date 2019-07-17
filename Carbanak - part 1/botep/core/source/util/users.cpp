@@ -1,8 +1,8 @@
-#include "core\util.h"
-#include "core\string.h"
-#include "core\debug.h"
-#include "core\reestr.h"
-#include "core\process.h"
+#include "..\..\include\core\util.h"
+#include "..\..\include\core\string.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\reestr.h"
+#include "..\..\include\core\process.h"
 #include <gdiplus.h>
 #include <Lmaccess.h>
 #include <Sddl.h>

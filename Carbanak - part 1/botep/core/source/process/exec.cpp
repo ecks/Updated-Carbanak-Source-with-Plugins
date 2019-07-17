@@ -1,8 +1,8 @@
-#include "core\process.h"
-#include "core\debug.h"
-#include "core\file.h"
-#include "core\util.h"
-#include "core\hook.h"
+#include "..\..\include\core\process.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\file.h"
+#include "..\..\include\core\util.h"
+#include "..\..\include\core\hook.h"
 #include <Wtsapi32.h>
 //такое нужно чтобы взялась функция GetModuleFileNameExA совместимая с XP
 #define PSAPI_VERSION 1

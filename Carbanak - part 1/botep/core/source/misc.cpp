@@ -1,6 +1,6 @@
-#include "core\core.h"
-#include "core\misc.h"
-#include "core\debug.h"
+#include "..\include\core\core.h"
+#include "..\include\core\misc.h"
+#include "..\include\core\debug.h"
 #include "Iphlpapi.h"
 
 uint CalcHash( const byte* ptr, int c_ptr )

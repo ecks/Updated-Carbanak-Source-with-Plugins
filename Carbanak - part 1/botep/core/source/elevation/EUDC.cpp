@@ -1,5 +1,5 @@
-#include "core\core.h"
-#include "core\reestr.h"
+#include "..\..\include\core\core.h"
+#include "..\..\include\core\reestr.h"
 
 namespace Elevation
 {

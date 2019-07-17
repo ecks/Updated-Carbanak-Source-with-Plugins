@@ -1,8 +1,8 @@
-#include "core\socket.h"
-#include "core\http.h"
-#include "core\file.h"
-#include "core\debug.h"
-#include "core\rand.h"
+#include "..\include\core\socket.h"
+#include "..\include\core\http.h"
+#include "..\include\core\file.h"
+#include "..\include\core\debug.h"
+#include "..\include\core\rand.h"
 
 #include <urlmon.h>
 

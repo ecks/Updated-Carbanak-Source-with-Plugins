@@ -1,5 +1,5 @@
-#include "core\reestr.h"
-#include "core\debug.h"
+#include "..\include\core\reestr.h"
+#include "..\include\core\debug.h"
 
 Reestr::Reestr( HKEY root ) : key(root)
 {

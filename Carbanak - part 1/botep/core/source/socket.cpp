@@ -1,5 +1,5 @@
-#include "core\socket.h"
-#include "core\debug.h"
+#include "..\include\core\socket.h"
+#include "..\include\core\debug.h"
 
 namespace Socket
 {

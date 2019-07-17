@@ -1,8 +1,8 @@
-#include "core\winapi.h"
-#include "core\string.h"
-#include "core\memory.h"
-#include "core\misc.h"
-#include "core\debug.h"
+#include "..\include\core\winapi.h"
+#include "..\include\core\string.h"
+#include "..\include\core\memory.h"
+#include "..\include\core\misc.h"
+#include "..\include\core\debug.h"
 
 #include <shlwapi.h>
 

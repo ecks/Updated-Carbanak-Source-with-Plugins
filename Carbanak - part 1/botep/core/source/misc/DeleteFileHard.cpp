@@ -1,4 +1,4 @@
-#include "core\file.h"
+#include "..\..\include\core\file.h"
 
 namespace File
 {

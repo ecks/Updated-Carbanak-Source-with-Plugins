@@ -1,6 +1,6 @@
-#include "core\core.h"
-#include "core\service.h"
-#include "core\debug.h"
+#include "..\..\include\core\core.h"
+#include "..\..\include\core\service.h"
+#include "..\..\include\core\debug.h"
 
 namespace Elevation
 {

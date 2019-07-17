@@ -1,6 +1,6 @@
-#include "core\util.h"
-#include "core\string.h"
-#include "core\debug.h"
+#include "..\..\include\core\util.h"
+#include "..\..\include\core\string.h"
+#include "..\..\include\core\debug.h"
 
 namespace Window
 {

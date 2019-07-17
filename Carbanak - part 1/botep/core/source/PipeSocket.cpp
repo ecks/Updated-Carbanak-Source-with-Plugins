@@ -1,6 +1,6 @@
-#include "core\PipeSocket.h"
-#include "core\socket.h"
-#include "core\debug.h"
+#include "..\include\core\PipeSocket.h"
+#include "..\include\core\socket.h"
+#include "..\include\core\debug.h"
 
 PipeSocketServer::PipeSocketServer( const char* pipeName, const char* _ip, int _port )
 {

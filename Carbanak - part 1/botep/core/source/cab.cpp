@@ -1,5 +1,5 @@
-#include "core\cab.h"
-#include "core\debug.h"
+#include "..\include\core\cab.h"
+#include "..\include\core\debug.h"
 
 //содержит имя распакованного файла и его содержимое в памяти
 struct ExtractInfo

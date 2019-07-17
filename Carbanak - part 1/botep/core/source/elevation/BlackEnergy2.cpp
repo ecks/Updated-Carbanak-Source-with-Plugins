@@ -1,11 +1,11 @@
-#include "core\winapi.h"
-#include "core\elevation.h"
-#include "core\memory.h"
-#include "core\string.h"
-#include "core\file.h"
-#include "core\debug.h"
-#include "core\misc.h"
-#include "core\process.h"
+#include "..\..\include\core\winapi.h"
+#include "..\..\include\core\elevation.h"
+#include "..\..\include\core\memory.h"
+#include "..\..\include\core\string.h"
+#include "..\..\include\core\file.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\misc.h"
+#include "..\..\include\core\process.h"
 
 namespace Elevation
 {

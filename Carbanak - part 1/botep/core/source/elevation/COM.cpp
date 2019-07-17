@@ -1,8 +1,8 @@
-#include "core\core.h"
-#include "core\reestr.h"
-#include "core\file.h"
-#include "core\pe.h"
-#include "core\debug.h"
+#include "..\..\include\core\core.h"
+#include "..\..\include\core\reestr.h"
+#include "..\..\include\core\file.h"
+#include "..\..\include\core\pe.h"
+#include "..\..\include\core\debug.h"
 #include <Imagehlp.h>
 
 namespace Elevation

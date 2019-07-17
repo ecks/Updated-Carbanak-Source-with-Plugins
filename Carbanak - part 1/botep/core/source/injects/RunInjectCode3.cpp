@@ -1,7 +1,7 @@
-#include "core\injects.h"
-#include "core\pe.h"
-#include "core\debug.h"
-#include "core\ntdll.h"
+#include "..\..\include\core\injects.h"
+#include "..\..\include\core\pe.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\ntdll.h"
 
 bool RunInjectCode3( HANDLE hprocess, HANDLE hthread, typeFuncThread startFunc, typeInjectCode func )
 {

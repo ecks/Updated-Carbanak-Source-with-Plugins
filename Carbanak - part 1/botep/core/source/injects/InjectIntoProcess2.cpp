@@ -1,5 +1,5 @@
-#include "core\injects.h"
-#include "core\debug.h"
+#include "..\..\include\core\injects.h"
+#include "..\..\include\core\debug.h"
 
 bool InjectIntoProcess2( DWORD pid, typeFuncThread func )
 {

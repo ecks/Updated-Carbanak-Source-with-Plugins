@@ -1,6 +1,6 @@
-#include "core\core.h"
-#include "core\debug.h"
-#include "core\file.h"
+#include "..\..\include\core\core.h"
+#include "..\..\include\core\debug.h"
+#include "..\..\include\core\file.h"
 #include "Imagehlp.h"
 
 namespace Elevation

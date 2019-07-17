@@ -1,6 +1,6 @@
-#include "core\process.h"
-#include "core\file.h"
-#include "core\debug.h"
+#include "..\..\include\core\process.h"
+#include "..\..\include\core\file.h"
+#include "..\..\include\core\debug.h"
 
 namespace Process
 {

@@ -1,4 +1,4 @@
-#include "core\injects.h"
+#include "..\..\include\core\injects.h"
 
 bool InjectIntoProcess1( DWORD pid, typeFuncThread func )
 {

@@ -1,6 +1,6 @@
-#include "core\injects.h"
-#include "core\pe.h"
-#include "core\debug.h"
+#include "..\..\include\core\injects.h"
+#include "..\..\include\core\pe.h"
+#include "..\..\include\core\debug.h"
 
 bool RunInjectCode2( HANDLE hprocess, HANDLE hthread, typeFuncThread startFunc, typeInjectCode func )
 {
