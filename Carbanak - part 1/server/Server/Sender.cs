@@ -181,7 +181,7 @@ namespace Server
 
 		bool ReadData(byte[] data, int c_data, int index)
 		{
-			//System.Diagnostics.Debug.WriteLine("ReadData(), readedBuf = " + readedBuf.ToString() + ", c_data = " + c_data.ToString());
+			System.Diagnostics.Debug.WriteLine("ReadData(), readedBuf = " + readedBuf.ToString() + ", c_data = " + c_data.ToString());
 			while (true)
 			{
 				if (readedBuf >= c_data) //приняли нужное количество байт
@@ -194,14 +194,14 @@ namespace Server
 				int c = Recv(buffer, readedBuf, buffer.Length - readedBuf);
 				if (c == 0)
 					return false;
-				/*
+				
 				string s = string.Empty;
 				for (int i = 0; i < c; i++)
 					s += buffer[readedBuf + i].ToString() + ' ';
 				System.Diagnostics.Debug.WriteLine(s);
-				*/
+				
 				readedBuf += c;
-				//System.Diagnostics.Debug.WriteLine("readedBuf = " + readedBuf.ToString());
+				System.Diagnostics.Debug.WriteLine("readedBuf = " + readedBuf.ToString());
 			}
 		}
 
@@ -227,10 +227,16 @@ namespace Server
 				return null;
 			try
 			{
-				if (aesKey != null)
-					return DecodeAES(buffer2, sz);
-				else
-					return DecodeRSA(buffer2, sz);
+                if (aesKey != null)
+                {
+                    System.Diagnostics.Debug.WriteLine("Decrypting AES");
+                    return DecodeAES(buffer2, sz);
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine("Decrypting RSA");
+                    return DecodeRSA(buffer2, sz);
+                }
 			}
 			catch
 			{
@@ -253,7 +259,7 @@ namespace Server
 				GCHandle handle = GCHandle.Alloc(m, GCHandleType.Pinned);
 				Packet packet = (Packet)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(Packet));
 				handle.Free();
-				//System.Diagnostics.Debug.WriteLine("-- read packet id " + id.ToString() + ", size = " + sz.ToString()); 
+
 				if (packet.num == 0 && (packet.type & 2) == 0) //первая часть разбитого пакета
 				{
 					if (data.Length < packet.fullSize)
@@ -263,15 +269,18 @@ namespace Server
 				if (packet.size > 0)
 				{
 					m = ReadAndDecodedData(packet.size);
-					if (m == null)
-						//System.Diagnostics.Debug.WriteLine("-- 3 " + packet.size.ToString() + " " + packet.cmd.ToString());
-						return 0;
+                    if (m == null)
+                    {
+                        System.Diagnostics.Debug.WriteLine("-- 3 " + packet.size.ToString() + " " + packet.cmd.ToString());
+                        return 0;
+                    }
 				}
 				int sz = packet.size;
 				cmd = packet.cmd;
 				id = packet.id;
 				verPacket = packet.ver;
 				byte[] recvData = m;
+                System.Diagnostics.Debug.WriteLine("-- read packet id " + id.ToString() + ", size = " + sz.ToString()); 
 				if (packet.ver >= 1)
 				{
 					//if (cmd == ID_SET_UID || cmd == ID_XOR_MASK ) //пришла маска для шифрования
@@ -293,8 +302,8 @@ namespace Server
 					sz = lzw.from_lzw(m, bufferLzw);
 					if (sz < 0)
 					{
-						//System.Diagnostics.Debug.WriteLine("error lzw: " + sz.ToString());
-						//System.Diagnostics.Debug.WriteLine("--2"); 
+						System.Diagnostics.Debug.WriteLine("error lzw: " + sz.ToString());
+						System.Diagnostics.Debug.WriteLine("--2"); 
 						return 0;
 					}
 					recvData = bufferLzw;

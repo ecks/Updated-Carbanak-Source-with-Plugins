@@ -44,7 +44,7 @@ namespace Server
 			try
 			{
 				sc = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-				IPEndPoint pnt = new IPEndPoint(IPAddress.Any, port);
+                IPEndPoint pnt = new IPEndPoint(IPAddress.Any, port);
 				sc.Bind(pnt);
 				sc.Listen(200);
 			}
@@ -60,8 +60,10 @@ namespace Server
                     Socket botSc = sc.Accept();
                     if (botSc.Connected)
                     {
+                        var stream = new NetworkStream(botSc);
+
                         //System.Diagnostics.Debug.WriteLine("bot connected");
-                        ClientBot bot = new ClientBot(botSc, null, null, this);
+                        ClientBot bot = new ClientBot(botSc, null, stream, this);
                         lock (lockBots)
                         {
                             bots.Add(bot);
@@ -97,7 +99,7 @@ namespace Server
 					TcpClient client = listener.AcceptTcpClient();
 					try
 					{
-						//System.Diagnostics.Debug.WriteLine("1");
+						System.Diagnostics.Debug.WriteLine("1");
 						SslStream ssl = new SslStream(client.GetStream());
 						ssl.AuthenticateAsServer(certificate);
 						ClientBot bot = new ClientBot(null, client, ssl, this);
@@ -110,7 +112,7 @@ namespace Server
 					}
 					catch (Exception e)
 					{
-						//System.Diagnostics.Debug.WriteLine(e.ToString());
+						System.Diagnostics.Debug.WriteLine(e.ToString());
 					}
 					client = null;
 				}
@@ -296,7 +298,7 @@ namespace Server
 						uint id;
 						int size;
                         cmd = sc.ReadPacket(ref data, out size, out id);
-                        //System.Diagnostics.Debug.WriteLine("packet id = " + id.ToString() + ", len = " + data.Length.ToString());
+                        System.Diagnostics.Debug.WriteLine("packet id = " + id.ToString() + ", len = " + data.Length.ToString() + ", cmd = " + cmd.ToString());
                         if (cmd == 0) //разрыв связи
                         {
                             connected = false;
